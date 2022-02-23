@@ -17,14 +17,14 @@ namespace NEAProject
             }
             return Minimum_index;
         }
-        void PrintSolution(List<RouteNode> route, int[] Distance, int DestinationNode)
+        void PrintSolution(List<RouteNode> route)
         {
             Console.Write("The route is ");
             foreach (var routeNode in route)
             {
                 Console.Write(routeNode.NodeIndex + ", ");
             }
-            Console.WriteLine("With a total distance of " + Distance[DestinationNode]);
+            Console.WriteLine("The route's total distance is " + route.Last().Distance);
         }
         List<RouteNode> DijkstraAlgorithm(int CurrentGraphVertices, int[,] CurrentGraph, int SourceNode, int DestinationNode)
         {

@@ -17,13 +17,14 @@ namespace NEAProject
             }
             return Minimum_index;
         }
-        void PrintSolution(List<RouteNode> route)
+        void PrintSolution(List<RouteNode> route, int[] Distance, int DestinationNode)
         {
-            Console.Write("Vertex    Distance " + "from Source\n");
+            Console.Write("The route is ");
             foreach (var routeNode in route)
             {
-                Console.WriteLine(routeNode.NodeIndex + "\t\t" + routeNode.Distance + "\n");
+                Console.Write(routeNode.NodeIndex + ", ");
             }
+            Console.WriteLine("With a total distance of " + Distance[DestinationNode]);
         }
         List<RouteNode> DijkstraAlgorithm(int CurrentGraphVertices, int[,] CurrentGraph, int SourceNode, int DestinationNode)
         {
@@ -140,14 +141,21 @@ namespace NEAProject
             }
             Console.WriteLine("Please select a source/starting node");
             int SelectSourceNode = Convert.ToInt32(Console.ReadLine());
-            while ((SelectSourceNode < 0) && (SelectSourceNode >= CurrentGraphVertices))
+            while ((SelectSourceNode < 1) || (SelectSourceNode > CurrentGraphVertices))
             {
                 Console.WriteLine("Invalid source node, please select another");
                 SelectSourceNode = Convert.ToInt32(Console.ReadLine());
             }
             int SourceNode = SelectSourceNode - 1;
             ShortestPathAnalysis t = new ShortestPathAnalysis();
-            t.PrintSolution(t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode, 10));
+            Console.WriteLine("Please select a destination node");
+            int DestinationNode=Convert.ToInt32(Console.ReadLine());
+            while ((DestinationNode < 1) || (DestinationNode > CurrentGraphVertices))
+            {
+                Console.WriteLine("Invalid destination node, please select another");
+                DestinationNode = Convert.ToInt32(Console.ReadLine());
+            }
+            t.PrintSolution(t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode, DestinationNode));
         }
     }
     public class RouteNode

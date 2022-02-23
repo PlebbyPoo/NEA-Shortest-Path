@@ -49,7 +49,17 @@ namespace NEAProject
                 }
                 VerticesSet[u] = true;
             }
-            var route = Distance.Select((x, i) => new RouteNode { Distance = x, NodeIndex = i + 1 }).OrderBy(x => x.Distance).Where(x => x.NodeIndex <= DestinationNode).Reverse().ToList();
+            // Order the distances into new objects, that contains their distance and original index
+            var route = Distance.Select((x, i) => new RouteNode { Distance = x, NodeIndex = i + 1 }).OrderBy(x => x.Distance).ToList();
+
+            // get the index of our dest node
+            var destNodeIndex = route.IndexOf(route.First(x => x.NodeIndex == DestinationNode));
+
+            // Remove any elements with a index greater than the index of our dest node.
+            route = route.Where((x, i) => i <= destNodeIndex).ToList();
+
+            // Reverse the list.
+            route.Reverse();
             var currentNode = route[0];
             var actualRoute = new List<RouteNode> { currentNode };
             for (int i = 0; i < route.Count; i++)

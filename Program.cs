@@ -1,8 +1,7 @@
 ﻿using System;
-
 namespace NEAProject
 {
-    public class ShortestPathAnalysis
+    class ShortestPathAnalysis
     {
         int MinimumDistance(int CurrentGraphVertices, int[] Distance, bool[] VerticesSet)
         {
@@ -19,9 +18,9 @@ namespace NEAProject
         {
             Console.Write("Vertex    Distance " + "from Source\n");
             for (int i = 0; i < CurrentGraphVertices; i++)
-                Console.WriteLine(i + "\t\t" + Distance[i] + "\n");
+                Console.WriteLine(i+1 + "\t\t" + Distance[i] + "\n");
         }
-        void DijkstraAlgorithm(int CurrentGraphVertices,int[, ] CurrentGraph, int SourceNode)
+        void DijkstraAlgorithm(int CurrentGraphVertices, int[,] CurrentGraph, int SourceNode)
         {
             int[] Distance = new int[CurrentGraphVertices];
             bool[] VerticesSet = new bool[CurrentGraphVertices];
@@ -33,7 +32,7 @@ namespace NEAProject
             Distance[SourceNode] = 0;
             for (int Count = 0; Count < (CurrentGraphVertices - 1); Count++)
             {
-                int u = MinimumDistance(CurrentGraphVertices,Distance, VerticesSet);
+                int u = MinimumDistance(CurrentGraphVertices, Distance, VerticesSet);
                 for (int v = 0; v < CurrentGraphVertices; v++)
                     if (!VerticesSet[v] && CurrentGraph[u, v] != 0 && Distance[u] != int.MaxValue && Distance[u] + CurrentGraph[u, v] < Distance[v])
                         Distance[v] = Distance[u] + CurrentGraph[u, v];
@@ -42,7 +41,7 @@ namespace NEAProject
 
 
         }
-        public static void Main(string[] args)
+        public static void Main()
         {
             //Creating the first graph          
             int[,] Graph1 = new int[5, 5]
@@ -86,7 +85,7 @@ namespace NEAProject
             //Get the user to select a valid graph
             Console.WriteLine("Please select a graph");
             int SelectCurrentGraph = Convert.ToInt32(Console.ReadLine());
-            while ((SelectCurrentGraph > 3) && (SelectCurrentGraph < 1))
+            while ((SelectCurrentGraph > 3) || (SelectCurrentGraph < 1))
             {
                 Console.WriteLine("Invalid Graph, please select another one");
                 SelectCurrentGraph = Convert.ToInt32(Console.ReadLine());
@@ -99,12 +98,14 @@ namespace NEAProject
                 int[,] CurrentGraph = Graph1;
                 Console.WriteLine("Please select a source/starting node");
                 int SelectSourceNode = Convert.ToInt32(Console.ReadLine());
-                while ((SelectSourceNode > 0) && (SelectSourceNode <= CurrentGraphVertices))
+                while ((SelectSourceNode < 0) && (SelectSourceNode >= CurrentGraphVertices))
                 {
-                    int SourceNode = SelectSourceNode - 1;
-                    ShortestPathAnalysis t = new ShortestPathAnalysis();
-                    t.DijkstraAlgorithm(CurrentGraphVertices,CurrentGraph, SourceNode);
+                    Console.WriteLine("Invalid source node, please select another");
+                    SelectSourceNode = Convert.ToInt32(Console.ReadLine());
                 }
+                int SourceNode = SelectSourceNode-1;
+                ShortestPathAnalysis t = new ShortestPathAnalysis();
+                t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode);
             }
             else if (SelectCurrentGraph == 2)
             {
@@ -112,29 +113,32 @@ namespace NEAProject
                 int[,] CurrentGraph = Graph2;
                 Console.WriteLine("Please select a source/starting node");
                 int SelectSourceNode = Convert.ToInt32(Console.ReadLine());
-                while ((SelectSourceNode > 0) && (SelectSourceNode <= CurrentGraphVertices))
+                while ((SelectSourceNode < 0) && (SelectSourceNode >= CurrentGraphVertices))
                 {
-                    int SourceNode = SelectSourceNode - 1;
-                    ShortestPathAnalysis t = new ShortestPathAnalysis();
-                    t.DijkstraAlgorithm(CurrentGraphVertices,CurrentGraph, SourceNode);
+                    Console.WriteLine("Invalid source node, please select another");
+                    SelectSourceNode = Convert.ToInt32(Console.ReadLine());
                 }
+                int SourceNode = SelectSourceNode-1;
+                ShortestPathAnalysis t = new ShortestPathAnalysis();
+                t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode);
             }
-            else if (SelectCurrentGraph==3)
+            else if (SelectCurrentGraph == 3)
             {
                 int CurrentGraphVertices = Graph3Vertices;
                 int[,] CurrentGraph = Graph3;
                 Console.WriteLine("Please select a source/starting node");
                 int SelectSourceNode = Convert.ToInt32(Console.ReadLine());
-                while ((SelectSourceNode>0)&& (SelectSourceNode <= CurrentGraphVertices))
+                while ((SelectSourceNode < 0) && (SelectSourceNode >= CurrentGraphVertices))
                 {
-                    int SourceNode = SelectSourceNode - 1;
-                    ShortestPathAnalysis t = new ShortestPathAnalysis();
-                    t.DijkstraAlgorithm(CurrentGraphVertices,CurrentGraph, SourceNode);
+                    Console.WriteLine("Invalid source node, please select another");
+                    SelectSourceNode = Convert.ToInt32(Console.ReadLine());
                 }
+                int SourceNode = SelectSourceNode-1;
+                ShortestPathAnalysis t = new ShortestPathAnalysis();
+                t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode);
             }
         }
     }
-    
 }
 
         

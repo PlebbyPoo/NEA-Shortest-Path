@@ -33,6 +33,7 @@ namespace NEAProject
             for (int Count = 0; Count < (CurrentGraphVertices - 1); Count++)
             {
                 int u = MinimumDistance(CurrentGraphVertices, Distance, VerticesSet);
+                VerticesSet[u] = true;
                 for (int v = 0; v < CurrentGraphVertices; v++)
                     if (!VerticesSet[v] && CurrentGraph[u, v] != 0 && Distance[u] != int.MaxValue && Distance[u] + CurrentGraph[u, v] < Distance[v])
                         Distance[v] = Distance[u] + CurrentGraph[u, v];
@@ -105,7 +106,7 @@ namespace NEAProject
                 }
                 int SourceNode = SelectSourceNode-1;
                 ShortestPathAnalysis t = new ShortestPathAnalysis();
-                t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph, SourceNode);
+                t.DijkstraAlgorithm(CurrentGraphVertices, CurrentGraph,SourceNode);
             }
             else if (SelectCurrentGraph == 2)
             {

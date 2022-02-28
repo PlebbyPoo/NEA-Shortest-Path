@@ -1,0 +1,5 @@
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net5.0\NEA Project.csproj.AssemblyReference.cache
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net5.0\NEA Project.GeneratedMSBuildEditorConfig.editorconfig
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net5.0\NEA Project.AssemblyInfoInputs.cache
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net5.0\NEA Project.AssemblyInfo.cs
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net5.0\NEA Project.csproj.CoreCompileInputs.cache

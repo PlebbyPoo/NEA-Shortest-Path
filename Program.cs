@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace NEAProject
 {
     class ShortestPathAnalysis
@@ -17,14 +19,14 @@ namespace NEAProject
             }
             return Minimum_index;
         }
-        void PrintSolution(List<RouteNode> route)
+        void PrintSolution(List<RouteNode> Route)
         {
             Console.Write("The route is ");
-            foreach (var routeNode in route)
+            foreach (var RouteNode in Route)
             {
-                Console.Write(routeNode.NodeIndex + ", ");
+                Console.Write(RouteNode.NodeIndex + ", ");
             }
-            Console.WriteLine("The route's total distance is " + route.Last().Distance);
+            Console.WriteLine("The route's total distance is " + Route.Last().Distance); 
         }
         List<RouteNode> DijkstraAlgorithm(int CurrentGraphVertices, int[,] CurrentGraph, int SourceNode, int DestinationNode)
         {
@@ -50,36 +52,36 @@ namespace NEAProject
                 VerticesSet[u] = true;
             }
             // Order the distances into new objects, that contains their distance and original index
-            var route = Distance.Select((x, i) => new RouteNode { Distance = x, NodeIndex = i + 1 }).OrderBy(x => x.Distance).ToList();
+            var Route = Distance.Select((x, i) => new RouteNode { Distance = x, NodeIndex = i + 1 }).OrderBy(x => x.Distance).ToList();
 
             // get the index of our dest node
-            var destNodeIndex = route.IndexOf(route.First(x => x.NodeIndex == DestinationNode));
+            var DestinationNodeIndex = Route.IndexOf(Route.First(x => x.NodeIndex == DestinationNode));
 
             // Remove any elements with a index greater than the index of our dest node.
-            route = route.Where((x, i) => i <= destNodeIndex).ToList();
+            Route = Route.Where((x, i) => i <= DestinationNodeIndex).ToList();
 
             // Reverse the list.
-            route.Reverse();
-            var currentNode = route[0];
-            var actualRoute = new List<RouteNode> { currentNode };
-            for (int i = 0; i < route.Count; i++)
+            Route.Reverse();
+            var CurrentNode = Route[0];
+            var ActualRoute = new List<RouteNode> { CurrentNode };
+            for (int i = 0; i < Route.Count; i++)
             {
-                if (i < route.Count - 1)
+                if (i < Route.Count - 1)
                 {
-                    var nextNode = route[i + 1];
-                    var routeDist = CurrentGraph[currentNode.NodeIndex - 1, nextNode.NodeIndex - 1];
-                    if (routeDist > 0)
+                    var NextNode = Route[i + 1];
+                    var RouteDist = CurrentGraph[CurrentNode.NodeIndex - 1, NextNode.NodeIndex - 1];
+                    if (RouteDist > 0)
                     {
-                        if (currentNode.Distance - routeDist == nextNode.Distance)
+                        if (CurrentNode.Distance - RouteDist == NextNode.Distance)
                         {
-                            currentNode = nextNode;
-                            actualRoute.Add(currentNode);
+                            CurrentNode = NextNode;
+                            ActualRoute.Add(CurrentNode);
                         }
                     }
                 }
             }
-            actualRoute.Reverse();
-            return actualRoute;
+            ActualRoute.Reverse();
+            return ActualRoute;
         }
         public static void Main()
         {

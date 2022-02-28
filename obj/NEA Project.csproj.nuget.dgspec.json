@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rjpro\\OneDrive\\Desktop\\NEA Project\\NEA Project\\NEA Project.csproj": {}
+    "G:\\gh-new\\NEA-Shortest-Path\\NEA Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rjpro\\OneDrive\\Desktop\\NEA Project\\NEA Project\\NEA Project.csproj": {
+    "G:\\gh-new\\NEA-Shortest-Path\\NEA Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rjpro\\OneDrive\\Desktop\\NEA Project\\NEA Project\\NEA Project.csproj",
+        "projectUniqueName": "G:\\gh-new\\NEA-Shortest-Path\\NEA Project.csproj",
         "projectName": "NEA Project",
-        "projectPath": "C:\\Users\\rjpro\\OneDrive\\Desktop\\NEA Project\\NEA Project\\NEA Project.csproj",
-        "packagesPath": "C:\\Users\\rjpro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rjpro\\OneDrive\\Desktop\\NEA Project\\NEA Project\\obj\\",
+        "projectPath": "G:\\gh-new\\NEA-Shortest-Path\\NEA Project.csproj",
+        "packagesPath": "C:\\Users\\H50003569\\.nuget\\packages\\",
+        "outputPath": "G:\\gh-new\\NEA-Shortest-Path\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rjpro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\H50003569\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

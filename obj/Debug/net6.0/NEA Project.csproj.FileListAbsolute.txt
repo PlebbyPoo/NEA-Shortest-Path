@@ -13,3 +13,18 @@ C:\Users\rjpro\OneDrive\Desktop\NEA Project\NEA Project\obj\Debug\net6.0\refint\
 C:\Users\rjpro\OneDrive\Desktop\NEA Project\NEA Project\obj\Debug\net6.0\NEA Project.pdb
 C:\Users\rjpro\OneDrive\Desktop\NEA Project\NEA Project\obj\Debug\net6.0\NEA Project.genruntimeconfig.cache
 C:\Users\rjpro\OneDrive\Desktop\NEA Project\NEA Project\obj\Debug\net6.0\ref\NEA Project.dll
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.dll
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\ref\NEA Project.dll
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.pdb
+G:\gh-new\NEA-Shortest-Path\bin\Debug\net6.0\NEA Project.exe
+G:\gh-new\NEA-Shortest-Path\bin\Debug\net6.0\NEA Project.deps.json
+G:\gh-new\NEA-Shortest-Path\bin\Debug\net6.0\NEA Project.runtimeconfig.json
+G:\gh-new\NEA-Shortest-Path\bin\Debug\net6.0\NEA Project.dll
+G:\gh-new\NEA-Shortest-Path\bin\Debug\net6.0\NEA Project.pdb
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.csproj.AssemblyReference.cache
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.GeneratedMSBuildEditorConfig.editorconfig
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.AssemblyInfoInputs.cache
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.AssemblyInfo.cs
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.csproj.CoreCompileInputs.cache
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\refint\NEA Project.dll
+G:\gh-new\NEA-Shortest-Path\obj\Debug\net6.0\NEA Project.genruntimeconfig.cache
